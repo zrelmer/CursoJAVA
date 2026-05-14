@@ -6,6 +6,7 @@ public class OperadoresMatematicos {
 
         int num1 = 20;
         int num2 = 15;
+        int num3 = 5;
 
 
         // SUMA
@@ -22,6 +23,9 @@ public class OperadoresMatematicos {
 
         // MODULO
         int resultadoModulo = num1 % num2; // 20 % 15 = 5
+
+        System.out.println((num1 + num2) * num3); // (20 + 15) * 5 = 175
+
 
     }
 }
