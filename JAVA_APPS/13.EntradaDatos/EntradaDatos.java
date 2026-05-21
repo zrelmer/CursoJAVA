@@ -21,6 +21,10 @@ public class EntradaDatos {
 
         System.out.println("Ingresa tu edad:");
         edad = Entrada.nextInt();
+        // después de leer un número con nextInt(), es necesario consumir el salto de línea que queda en el buffer de entrada para evitar problemas al leer la siguiente línea de texto con nextLine()
+
+        // el buffer es una zona de memoria donde se almacenan temporalmente los datos que se van a procesar. Cuando se lee un número con nextInt(), el salto de línea que se genera al presionar Enter queda en el buffer, lo que puede causar problemas al leer la siguiente línea de texto con nextLine() porque nextLine() leería ese salto de línea en lugar de la entrada del usuario. Para evitar esto, se llama a nextLine() después de nextInt() para consumir ese salto de línea y permitir que la siguiente llamada a nextLine() funcione correctamente.
+        
         Entrada.nextLine();
 
         System.out.println("Ingresa tu ciudad:");
