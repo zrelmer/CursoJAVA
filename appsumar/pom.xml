@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- el archivo POM (Project Object Model) define la estructura y configuración del proyecto Maven -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sumarnumeros</groupId>
+    <artifactId>appsumar</artifactId>
+    <!-- version sirve para identificar la versión de la aplicación -->
+    <version>1.0-SNAPSHOT</version>
+    <!-- properties sirven para definir valores que se pueden reutilizar en el archivo POM -->
+    <properties>
+        <!-- Definimos el encoding del proyecto para que se use UTF-8 y hacer uso de caracteres especiales -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- estoy usando java 24 aca definimos la versión del compilador -->
+        <!-- <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target> -->
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <!-- aca creamos las dependencias para el proyecto esto nos sirve para incluir librerias externas -->
+    <dependencies>
+        <!-- se crea dos dependencias para JavaFX y con esto podemos crear interfaces de usuario interactivas -->
+        <dependency>
+            <!-- groupId define el identificador del grupo de la dependencia -->
+            <groupId>org.openjfx</groupId>
+            <!-- artifactId define el identificador del artefacto de la dependencia -->
+            <artifactId>javafx-controls</artifactId>
+            <!-- version define la versión de la dependencia -->
+            <version>21</version>
+        </dependency>
+
+        <dependency>
+            <!-- groupId define el identificador del grupo de la dependencia -->
+            <groupId>org.openjfx</groupId>
+            <!-- artifactId define el identificador del artefacto de la dependencia -->
+            <artifactId>javafx-fxml</artifactId>
+            <!-- version define la versión de la dependencia -->
+            <version>21</version>
+        </dependency>
+    </dependencies>
+
+    <!-- build lo creamos para definir cómo se compila el proyecto  y con esto podemos configurar el proceso de compilación -->
+    <build>
+        <!-- plugins lo utilizamos para configurar el proceso de compilación -->
+        <plugins>
+            <!-- plugin para configurar el proceso de compilación -->
+            <plugin>
+                <!-- org.apache.maven.plugins nos sive para -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <!-- maven-compiler-plugin nos sirve para  -->
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- version define la versión del plugin -->
+                <version>3.13.0</version>
+                <!-- configuration se utiliza para configurar el plugin -->
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>com.sumarnumeros.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
