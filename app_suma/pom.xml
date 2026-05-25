@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.suma</groupId>
+    <artifactId>app_suma</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
+    <!-- librerias para graficas -->
+    <dependencies>
+        <dependency>
+            <!-- org.openjfx:  -->
+            <groupId>org.openjfx</groupId>
+            <!-- oredena a maven a descargar botones y ventanas -->
+            <artifactId>javafx-controls</artifactId>
+            <version>21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <!--  -->
+            <artifactId>javafx-fxml</artifactId>
+            <version>21</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Plugin para compilar el proyecto con JavaFX -->
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Define el creador o la organización que desarrolló el plugin. -->
+                <!-- Funciona igual que los paquetes en Java. Le dice a Maven que este plugin pertenece al grupo oficial
+                de herramientas mantenidas directamente por el equipo central de Apache Maven. -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <!-- Es el nombre específico del plugin que vas a usar. -->
+                <!--En el ecosistema de Maven existen plugins para todo (para empaquetar, para hacer pruebas, para desplegar). 
+                Este artefacto en particular es el compilador oficial. Su única tarea en la vida es agarrar el compilador de tu JDK 
+                (javac) y aplicarlo a los archivos de tu proyecto.-->
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- Especifica la versión exacta de la herramienta de compilación que Maven debe descargar de internet. -->
+                <version>3.8.1</version>
+                <!-- se configura para usar Java 21  -->
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>com.suma.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+
+
+
+</project>
